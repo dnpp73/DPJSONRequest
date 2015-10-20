@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name                  = 'DPJSONRequest'
-  s.version               = '1.0.0'
-  s.summary               = 'NSURLConnection + NSOperationQueue + NSJSONSerialization + Block Based Callback'
+  s.version               = '2.0.0'
+  s.summary               = 'iOS 6-9, OSX 10.8-10.11 Compatible Lightweight HTTP JSON Request Util'
   s.author                = { 'Yusuke SUGAMIYA' => 'yusuke.dnpp@gmail.com' }
   s.homepage              = 'https://github.com/dnpp73/DPJSONRequest'
   s.source                = { :git => 'https://github.com/dnpp73/DPJSONRequest.git', :tag => "#{s.version}" }
