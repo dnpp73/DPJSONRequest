@@ -14,7 +14,7 @@ DPJSONRequest
 
 # Description
 
-NSURLConnection + NSOperationQueue + NSJSONSerialization + Block Based Callback
+iOS 6-9, OSX 10.8-10.11 Compatible Lightweight HTTP JSON Request Util
 
 #LICENSE
 
