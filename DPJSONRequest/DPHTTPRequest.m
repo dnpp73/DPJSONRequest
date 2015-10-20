@@ -16,15 +16,14 @@
 {
     self = [super init];
     if (self) {
-        _method     = method;
-        _query      = query.copy;
-        _form       = form.copy;
+        _method = method;
+        _query  = query.copy;
+        _form   = form.copy;
+        
         _URL        = [[self class] URLWithURLString:URLString query:_query];
         _URLRequest = [[self class] URLRequestForURL:_URL method:_method form:_form];
         
-        _requestQueue  = [[self class] defaultRequestOperationQueue];
         _callbackQueue = dispatch_get_main_queue();
-        _waitAfterConnection = 0;
         _feedbackNetworkActivityIndicator = YES;
     }
     return self;
@@ -64,10 +63,8 @@
     if (self.feedbackNetworkActivityIndicator) {
         [DPReachability beginNetworkConnection];
     }
-    [_requestQueue addOperationWithBlock:^{
-        NSURLResponse* urlResponse     = nil;
-        NSError*       connectionError = nil;
-        NSData* data = [NSURLConnection sendSynchronousRequest:_URLRequest returningResponse:&urlResponse error:&connectionError];
+    
+    void (^requestCompletion)(NSData*, NSURLResponse*, NSError*) = ^(NSData* data, NSURLResponse* urlResponse, NSError* connectionError){
         NSHTTPURLResponse* httpUrlResponse = nil;
         if ([urlResponse isKindOfClass:[NSHTTPURLResponse class]]) {
             httpUrlResponse = (NSHTTPURLResponse*)urlResponse;
@@ -76,18 +73,36 @@
                 connectionError = [NSError errorWithDomain:@"DPJSONRequest" code:-1 userInfo:@{NSLocalizedDescriptionKey: @"URLResponse is not HTTPResponse"}];
             }
         }
-        dispatch_async(_callbackQueue, ^{
-            if (self.feedbackNetworkActivityIndicator) {
-                [DPReachability endNetworkConnection];
-            }
-            if (callback) {
-                callback(httpUrlResponse, data, connectionError);
-            }
-        });
-        if (_waitAfterConnection) {
-            [NSThread sleepForTimeInterval:_waitAfterConnection];
+        if (self.feedbackNetworkActivityIndicator) {
+            [DPReachability endNetworkConnection];
         }
-    }];
+        if (callback) {
+            dispatch_async(_callbackQueue, ^{
+                callback(httpUrlResponse, data, connectionError);
+            });
+        }
+    };
+    
+    #if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
+    double versionNumber = NSFoundationVersionNumber_iOS_7_0;
+    #elif TARGET_OS_MAC
+    double versionNumber = NSFoundationVersionNumber10_9;
+    #else
+    double versionNumber = 1000;
+    #endif
+    // iOS 6.x, OSX 10.8
+    if (NSFoundationVersionNumber < versionNumber) {
+        [[[self class] defaultRequestOperationQueue] addOperationWithBlock:^{
+            NSURLResponse* urlResponse     = nil;
+            NSError*       connectionError = nil;
+            NSData* data = [NSURLConnection sendSynchronousRequest:_URLRequest returningResponse:&urlResponse error:&connectionError];
+            requestCompletion(data, urlResponse, connectionError);
+        }];
+    }
+    // iOS 7.x, OSX 10.9 or later
+    else {
+        [[[[self class] defaultURLSession] dataTaskWithRequest:_URLRequest completionHandler:requestCompletion] resume];
+    }
 }
 
 - (void)sendHTTPRequestWithCallback:(DPHTTPRequestCallback)callback
@@ -129,7 +144,9 @@
     return methodString;
 }
 
-+ (NSOperationQueue*)defaultRequestOperationQueue
+#pragma mark - Private Class Method
+
++ (NSOperationQueue*)defaultRequestOperationQueue // for iOS 6, NSURLConnection
 {
     static NSOperationQueue* queue = nil;
     static dispatch_once_t onceToken;
@@ -140,7 +157,17 @@
     return queue;
 }
 
-#pragma mark - Private Class Method
++ (NSURLSession*)defaultURLSession // for iOS 7
+{
+    static NSURLSession* session = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSURLSessionConfiguration* configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        configuration.HTTPMaximumConnectionsPerHost = 1;
+        session = [NSURLSession sessionWithConfiguration:configuration];
+    });
+    return session;
+}
 
 + (NSString*)queryStringFromQueryDictionary:(NSDictionary*)query
 {
