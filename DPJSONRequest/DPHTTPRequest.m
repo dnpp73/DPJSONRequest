@@ -176,7 +176,21 @@
     }
     
     static NSString* (^urlEncoder)(NSString*) = ^(NSString* string){
-        return (__bridge_transfer NSString*)CFURLCreateStringByAddingPercentEscapes(NULL, (__bridge CFStringRef)string, NULL, CFSTR (";,/?:@&=+$#"), kCFStringEncodingUTF8);
+        #if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
+        double versionNumber = NSFoundationVersionNumber_iOS_7_0;
+        #elif TARGET_OS_MAC
+        double versionNumber = NSFoundationVersionNumber10_9;
+        #else
+        double versionNumber = 1000;
+        #endif
+        // iOS 6.x, OSX 10.8
+        if (NSFoundationVersionNumber < versionNumber) {
+            return (__bridge_transfer NSString*)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (__bridge CFStringRef)string, NULL, CFSTR("!*'\" ();:@&=+$,/?%#[]"), kCFStringEncodingUTF8);
+        }
+        // iOS 7.x, OSX 10.9 or later
+        else {
+            return [string stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"!*'\" ();:@&=+$,/?%#[]"].invertedSet];
+        }
     };
     
     NSMutableString* queryString = [NSMutableString stringWithString:@"?"];
@@ -185,7 +199,6 @@
         [queryString appendString:@"&"];
     }
     [queryString deleteCharactersInRange:NSMakeRange(queryString.length - 1, 1)];
-    
     return queryString.copy;
 }
 
