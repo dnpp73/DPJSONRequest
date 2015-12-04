@@ -21,8 +21,7 @@ typedef void (^DPHTTPRequestCallback)(NSHTTPURLResponse* httpUrlResponse, NSData
 @property (nonatomic, readonly)       NSMutableURLRequest* URLRequest;
 - (instancetype)initWithURLString:(NSString*)URLString method:(DPHTTPRequestMethod)method query:(NSDictionary*)query form:(NSDictionary*)form;
 
-@property (nonatomic) BOOL feedbackNetworkActivityIndicator; // Default is YES. flag for networkActivityIndicator (only iOS)
-@property (nonatomic) dispatch_queue_t  callbackQueue;       // Defautl is main queue
+@property (nonatomic) dispatch_queue_t  callbackQueue; // Defautl is main queue
 
 - (void)sendHTTPRequestWithCallback:(DPHTTPRequestCallback)callback;
 

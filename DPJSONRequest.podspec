@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = 'DPJSONRequest'
-  s.version               = '2.0.1'
+  s.version               = '3.0.0'
   s.summary               = 'iOS 6-9, OSX 10.8-10.11 Compatible Lightweight HTTP JSON Request Util'
   s.author                = { 'Yusuke SUGAMIYA' => 'yusuke.dnpp@gmail.com' }
   s.homepage              = 'https://github.com/dnpp73/DPJSONRequest'
@@ -12,8 +12,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '6.0'
   s.osx.deployment_target = '10.8'
   s.requires_arc          = true
-
-  s.dependency 'DPReachability'
 
   s.license = {
    :type => 'MIT',

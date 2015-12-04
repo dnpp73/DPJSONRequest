@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1949804B1C1204EC00E8470E /* DPHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 194980421C1204EC00E8470E /* DPHTTPRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1949804C1C1204EC00E8470E /* DPHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 194980421C1204EC00E8470E /* DPHTTPRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1949804D1C1204EC00E8470E /* DPHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 194980431C1204EC00E8470E /* DPHTTPRequest.m */; };
+		1949804E1C1204EC00E8470E /* DPHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 194980431C1204EC00E8470E /* DPHTTPRequest.m */; };
+		1949804F1C1204EC00E8470E /* DPHTTPStringRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 194980441C1204EC00E8470E /* DPHTTPStringRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		194980501C1204EC00E8470E /* DPHTTPStringRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 194980441C1204EC00E8470E /* DPHTTPStringRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		194980511C1204EC00E8470E /* DPHTTPStringRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 194980451C1204EC00E8470E /* DPHTTPStringRequest.m */; };
+		194980521C1204EC00E8470E /* DPHTTPStringRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 194980451C1204EC00E8470E /* DPHTTPStringRequest.m */; };
+		194980531C1204EC00E8470E /* DPJSONRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 194980461C1204EC00E8470E /* DPJSONRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		194980541C1204EC00E8470E /* DPJSONRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 194980461C1204EC00E8470E /* DPJSONRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		194980551C1204EC00E8470E /* DPJSONRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 194980471C1204EC00E8470E /* DPJSONRequest.m */; };
+		194980561C1204EC00E8470E /* DPJSONRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 194980471C1204EC00E8470E /* DPJSONRequest.m */; };
+		194980571C1204EC00E8470E /* DPNullRemoveUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 194980491C1204EC00E8470E /* DPNullRemoveUtil.h */; };
+		194980581C1204EC00E8470E /* DPNullRemoveUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 194980491C1204EC00E8470E /* DPNullRemoveUtil.h */; };
+		194980591C1204EC00E8470E /* DPNullRemoveUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949804A1C1204EC00E8470E /* DPNullRemoveUtil.m */; };
+		1949805A1C1204EC00E8470E /* DPNullRemoveUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1949804A1C1204EC00E8470E /* DPNullRemoveUtil.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		194980241C12028800E8470E /* DPJSONRequest_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DPJSONRequest_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		194980321C12029200E8470E /* DPJSONRequest_OSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DPJSONRequest_OSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1949803B1C1204DD00E8470E /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
+		1949803C1C1204DD00E8470E /* Info-OSX.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-OSX.plist"; sourceTree = "<group>"; };
+		194980421C1204EC00E8470E /* DPHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPHTTPRequest.h; sourceTree = "<group>"; };
+		194980431C1204EC00E8470E /* DPHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPHTTPRequest.m; sourceTree = "<group>"; };
+		194980441C1204EC00E8470E /* DPHTTPStringRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPHTTPStringRequest.h; sourceTree = "<group>"; };
+		194980451C1204EC00E8470E /* DPHTTPStringRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPHTTPStringRequest.m; sourceTree = "<group>"; };
+		194980461C1204EC00E8470E /* DPJSONRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPJSONRequest.h; sourceTree = "<group>"; };
+		194980471C1204EC00E8470E /* DPJSONRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPJSONRequest.m; sourceTree = "<group>"; };
+		194980491C1204EC00E8470E /* DPNullRemoveUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPNullRemoveUtil.h; sourceTree = "<group>"; };
+		1949804A1C1204EC00E8470E /* DPNullRemoveUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPNullRemoveUtil.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		194980201C12028800E8470E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1949802E1C12029200E8470E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		194980181C12026100E8470E = {
+			isa = PBXGroup;
+			children = (
+				194980411C1204EC00E8470E /* DPJSONRequest */,
+				1949803A1C1204DD00E8470E /* Supporting Files */,
+				194980251C12028800E8470E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		194980251C12028800E8470E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				194980241C12028800E8470E /* DPJSONRequest_iOS.framework */,
+				194980321C12029200E8470E /* DPJSONRequest_OSX.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1949803A1C1204DD00E8470E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1949803B1C1204DD00E8470E /* Info-iOS.plist */,
+				1949803C1C1204DD00E8470E /* Info-OSX.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		194980411C1204EC00E8470E /* DPJSONRequest */ = {
+			isa = PBXGroup;
+			children = (
+				194980481C1204EC00E8470E /* Util */,
+				194980421C1204EC00E8470E /* DPHTTPRequest.h */,
+				194980431C1204EC00E8470E /* DPHTTPRequest.m */,
+				194980441C1204EC00E8470E /* DPHTTPStringRequest.h */,
+				194980451C1204EC00E8470E /* DPHTTPStringRequest.m */,
+				194980461C1204EC00E8470E /* DPJSONRequest.h */,
+				194980471C1204EC00E8470E /* DPJSONRequest.m */,
+			);
+			path = DPJSONRequest;
+			sourceTree = "<group>";
+		};
+		194980481C1204EC00E8470E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				194980491C1204EC00E8470E /* DPNullRemoveUtil.h */,
+				1949804A1C1204EC00E8470E /* DPNullRemoveUtil.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		194980211C12028800E8470E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				194980531C1204EC00E8470E /* DPJSONRequest.h in Headers */,
+				1949804B1C1204EC00E8470E /* DPHTTPRequest.h in Headers */,
+				1949804F1C1204EC00E8470E /* DPHTTPStringRequest.h in Headers */,
+				194980571C1204EC00E8470E /* DPNullRemoveUtil.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1949802F1C12029200E8470E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				194980541C1204EC00E8470E /* DPJSONRequest.h in Headers */,
+				1949804C1C1204EC00E8470E /* DPHTTPRequest.h in Headers */,
+				194980501C1204EC00E8470E /* DPHTTPStringRequest.h in Headers */,
+				194980581C1204EC00E8470E /* DPNullRemoveUtil.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		194980231C12028800E8470E /* DPJSONRequest-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1949802C1C12028800E8470E /* Build configuration list for PBXNativeTarget "DPJSONRequest-iOS" */;
+			buildPhases = (
+				1949801F1C12028800E8470E /* Sources */,
+				194980201C12028800E8470E /* Frameworks */,
+				194980211C12028800E8470E /* Headers */,
+				194980221C12028800E8470E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DPJSONRequest-iOS";
+			productName = "DPJSONRequest-iOS";
+			productReference = 194980241C12028800E8470E /* DPJSONRequest_iOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		194980311C12029200E8470E /* DPJSONRequest-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 194980371C12029200E8470E /* Build configuration list for PBXNativeTarget "DPJSONRequest-OSX" */;
+			buildPhases = (
+				1949802D1C12029200E8470E /* Sources */,
+				1949802E1C12029200E8470E /* Frameworks */,
+				1949802F1C12029200E8470E /* Headers */,
+				194980301C12029200E8470E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DPJSONRequest-OSX";
+			productName = "DPJSONRequest-OSX";
+			productReference = 194980321C12029200E8470E /* DPJSONRequest_OSX.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		194980191C12026100E8470E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DP;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = dnpp.org;
+				TargetAttributes = {
+					194980231C12028800E8470E = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					194980311C12029200E8470E = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 1949801C1C12026100E8470E /* Build configuration list for PBXProject "DPJSONRequest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 194980181C12026100E8470E;
+			productRefGroup = 194980251C12028800E8470E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				194980231C12028800E8470E /* DPJSONRequest-iOS */,
+				194980311C12029200E8470E /* DPJSONRequest-OSX */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		194980221C12028800E8470E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		194980301C12029200E8470E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1949801F1C12028800E8470E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				194980591C1204EC00E8470E /* DPNullRemoveUtil.m in Sources */,
+				194980551C1204EC00E8470E /* DPJSONRequest.m in Sources */,
+				194980511C1204EC00E8470E /* DPHTTPStringRequest.m in Sources */,
+				1949804D1C1204EC00E8470E /* DPHTTPRequest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1949802D1C12029200E8470E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1949805A1C1204EC00E8470E /* DPNullRemoveUtil.m in Sources */,
+				194980561C1204EC00E8470E /* DPJSONRequest.m in Sources */,
+				194980521C1204EC00E8470E /* DPHTTPStringRequest.m in Sources */,
+				1949804E1C1204EC00E8470E /* DPHTTPRequest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1949801D1C12026100E8470E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+			};
+			name = Debug;
+		};
+		1949801E1C12026100E8470E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+			};
+			name = Release;
+		};
+		1949802A1C12028800E8470E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Supporting Files/Info-iOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.dnpp.DPJSONRequest-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1949802B1C12028800E8470E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Supporting Files/Info-iOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.dnpp.DPJSONRequest-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		194980381C12029200E8470E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Supporting Files/Info-OSX.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.dnpp.DPJSONRequest-OSX";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		194980391C12029200E8470E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Supporting Files/Info-OSX.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.dnpp.DPJSONRequest-OSX";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1949801C1C12026100E8470E /* Build configuration list for PBXProject "DPJSONRequest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1949801D1C12026100E8470E /* Debug */,
+				1949801E1C12026100E8470E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1949802C1C12028800E8470E /* Build configuration list for PBXNativeTarget "DPJSONRequest-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1949802A1C12028800E8470E /* Debug */,
+				1949802B1C12028800E8470E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		194980371C12029200E8470E /* Build configuration list for PBXNativeTarget "DPJSONRequest-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				194980381C12029200E8470E /* Debug */,
+				194980391C12029200E8470E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 194980191C12026100E8470E /* Project object */;
+}

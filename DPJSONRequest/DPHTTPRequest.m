@@ -1,5 +1,4 @@
 #import "DPHTTPRequest.h"
-#import "DPReachability.h"
 
 
 @implementation DPHTTPRequest
@@ -24,7 +23,6 @@
         _URLRequest = [[self class] URLRequestForURL:_URL method:_method form:_form];
         
         _callbackQueue = dispatch_get_main_queue();
-        _feedbackNetworkActivityIndicator = YES;
     }
     return self;
 }
@@ -46,24 +44,6 @@
 
 - (void)sendURLRequestWithCallback:(void (^)(NSHTTPURLResponse* httpUrlResponse, NSData* data, NSError* connectionError))callback // Private
 {
-    // Check network connection
-    if ([DPReachability isInternetConnectionAvailable] == NO) {
-        dispatch_async(_callbackQueue, ^{
-            if (callback) {
-                NSHTTPURLResponse* httpUrlResponse;
-                id                 data;
-                NSString*          errorDomain     = NSStringFromClass([self class]);
-                NSError*           connectionError = [NSError errorWithDomain:errorDomain code:-1 userInfo:@{NSLocalizedDescriptionKey: @"No internet connection"}];
-                callback(httpUrlResponse, data, connectionError);
-            }
-        });
-        return;
-    }
-    
-    if (self.feedbackNetworkActivityIndicator) {
-        [DPReachability beginNetworkConnection];
-    }
-    
     void (^requestCompletion)(NSData*, NSURLResponse*, NSError*) = ^(NSData* data, NSURLResponse* urlResponse, NSError* connectionError){
         NSHTTPURLResponse* httpUrlResponse = nil;
         if ([urlResponse isKindOfClass:[NSHTTPURLResponse class]]) {
@@ -72,9 +52,6 @@
             if (!connectionError) {
                 connectionError = [NSError errorWithDomain:@"DPJSONRequest" code:-1 userInfo:@{NSLocalizedDescriptionKey: @"URLResponse is not HTTPResponse"}];
             }
-        }
-        if (self.feedbackNetworkActivityIndicator) {
-            [DPReachability endNetworkConnection];
         }
         if (callback) {
             dispatch_async(_callbackQueue, ^{
@@ -95,7 +72,10 @@
         [[[self class] defaultRequestOperationQueue] addOperationWithBlock:^{
             NSURLResponse* urlResponse     = nil;
             NSError*       connectionError = nil;
+            #pragma clang diagnostic push
+            #pragma clang diagnostic ignored "-Wdeprecated-declarations"
             NSData* data = [NSURLConnection sendSynchronousRequest:_URLRequest returningResponse:&urlResponse error:&connectionError];
+            #pragma clang diagnostic pop
             requestCompletion(data, urlResponse, connectionError);
         }];
     }
@@ -185,7 +165,10 @@
         #endif
         // iOS 6.x, OSX 10.8
         if (NSFoundationVersionNumber < versionNumber) {
+            #pragma clang diagnostic push
+            #pragma clang diagnostic ignored "-Wdeprecated-declarations"
             return (__bridge_transfer NSString*)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (__bridge CFStringRef)string, NULL, CFSTR("!*'\" ();:@&=+$,/?%#[]"), kCFStringEncodingUTF8);
+            #pragma clang diagnostic pop
         }
         // iOS 7.x, OSX 10.9 or later
         else {
