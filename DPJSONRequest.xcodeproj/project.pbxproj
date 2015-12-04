@@ -26,8 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		194980241C12028800E8470E /* DPJSONRequest_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DPJSONRequest_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		194980321C12029200E8470E /* DPJSONRequest_OSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DPJSONRequest_OSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		194980241C12028800E8470E /* DPJSONRequest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DPJSONRequest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		194980321C12029200E8470E /* DPJSONRequest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DPJSONRequest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1949803B1C1204DD00E8470E /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		1949803C1C1204DD00E8470E /* Info-OSX.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-OSX.plist"; sourceTree = "<group>"; };
 		194980421C1204EC00E8470E /* DPHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPHTTPRequest.h; sourceTree = "<group>"; };
@@ -70,8 +70,8 @@
 		194980251C12028800E8470E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				194980241C12028800E8470E /* DPJSONRequest_iOS.framework */,
-				194980321C12029200E8470E /* DPJSONRequest_OSX.framework */,
+				194980241C12028800E8470E /* DPJSONRequest.framework */,
+				194980321C12029200E8470E /* DPJSONRequest.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,7 +151,7 @@
 			);
 			name = "DPJSONRequest-iOS";
 			productName = "DPJSONRequest-iOS";
-			productReference = 194980241C12028800E8470E /* DPJSONRequest_iOS.framework */;
+			productReference = 194980241C12028800E8470E /* DPJSONRequest.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		194980311C12029200E8470E /* DPJSONRequest-OSX */ = {
@@ -169,7 +169,7 @@
 			);
 			name = "DPJSONRequest-OSX";
 			productName = "DPJSONRequest-OSX";
-			productReference = 194980321C12029200E8470E /* DPJSONRequest_OSX.framework */;
+			productReference = 194980321C12029200E8470E /* DPJSONRequest.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -256,6 +256,8 @@
 			buildSettings = {
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_BUNDLE_IDENTIFIER = org.dnpp.DPJSONRequest;
+				PRODUCT_NAME = "$(PROJECT_NAME:c99extidentifier)";
 			};
 			name = Debug;
 		};
@@ -264,6 +266,8 @@
 			buildSettings = {
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_BUNDLE_IDENTIFIER = org.dnpp.DPJSONRequest;
+				PRODUCT_NAME = "$(PROJECT_NAME:c99extidentifier)";
 			};
 			name = Release;
 		};
@@ -311,9 +315,6 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.dnpp.DPJSONRequest-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -360,8 +361,6 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.dnpp.DPJSONRequest-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -417,9 +416,6 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.dnpp.DPJSONRequest-OSX";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -467,8 +463,6 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.dnpp.DPJSONRequest-OSX";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -495,6 +489,7 @@
 				1949802B1C12028800E8470E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		194980371C12029200E8470E /* Build configuration list for PBXNativeTarget "DPJSONRequest-OSX" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +498,7 @@
 				194980391C12029200E8470E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

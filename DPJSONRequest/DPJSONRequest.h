@@ -1,4 +1,4 @@
-#import "DPHTTPRequest.h"
+#import <DPJSONRequest/DPHTTPRequest.h>
 
 
 typedef void (^DPJSONRequestCallback)(NSHTTPURLResponse* httpUrlResponse, id json, NSError* connectionError, NSError* jsonError);

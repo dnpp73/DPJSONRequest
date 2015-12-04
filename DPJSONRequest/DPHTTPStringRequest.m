@@ -14,7 +14,11 @@
             }
         }
         else {
-            CFStringEncoding cfEncoding = CFStringConvertIANACharSetNameToEncoding((__bridge CFStringRef)[httpUrlResponse textEncodingName]);
+            CFStringEncoding cfEncoding = kCFStringEncodingUTF8;
+            NSString* textEncodingName  = [httpUrlResponse textEncodingName];
+            if (textEncodingName.length) {
+                cfEncoding = CFStringConvertIANACharSetNameToEncoding((__bridge CFStringRef)textEncodingName);
+            }
             NSStringEncoding encoding   = CFStringConvertEncodingToNSStringEncoding(cfEncoding);
             NSString*        httpBody   = [[NSString alloc] initWithData:data encoding:encoding];
             if (callback) {

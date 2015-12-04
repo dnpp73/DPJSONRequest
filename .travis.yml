@@ -9,10 +9,10 @@ cache:
 before_install:
   - gem install cocoapods xcpretty --no-ri --no-rdoc
   - set -o pipefail
-  - xcodebuild clean -project DPJSONRequest.xcodeproj -target DPJSONRequest-iOS -configuration Release -sdk iphonesimulator | xcpretty -c
-  - xcodebuild clean -project DPJSONRequest.xcodeproj -target DPJSONRequest-OSX -configuration Release -sdk macosx          | xcpretty -c
+  - xcodebuild clean -project DPJSONRequest.xcodeproj -scheme DPJSONRequest-iOS -sdk iphonesimulator | xcpretty -c
+  - xcodebuild clean -project DPJSONRequest.xcodeproj -scheme DPJSONRequest-OSX -sdk macosx | xcpretty -c
 
 script:
   - pod lib lint
-  - xcodebuild -project DPJSONRequest.xcodeproj -target DPJSONRequest-iOS -configuration Release -sdk iphonesimulator | xcpretty -c
-  - xcodebuild -project DPJSONRequest.xcodeproj -target DPJSONRequest-OSX -configuration Release -sdk macosx          | xcpretty -c
+  - xcodebuild -project DPJSONRequest.xcodeproj -scheme DPJSONRequest-iOS -sdk iphonesimulator | xcpretty -c
+  - xcodebuild -project DPJSONRequest.xcodeproj -scheme DPJSONRequest-OSX -sdk macosx | xcpretty -c
